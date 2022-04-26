@@ -1,3 +1,4 @@
+import enum
 import numpy as np
 from search import *
 from utils import *
@@ -78,11 +79,11 @@ class myTablutPlayer(Problem):
 
 
 
-tp = myTablutPlayer(np.zeros((9,9), dtype=np.int8))
+tp = myTablutPlayer(np.zeros((9,9), dtype= enum))
 
 for i in range(9):
     for j in range (9):
-        
+        if j in range(1,2):
 
 
 soln = breadth_first_tree_search(tp)
