@@ -32,8 +32,11 @@ class TablutPlayer:
             result.append('MC->')
         if ....
         return result
+
+        Tablut: the actions given must be the couple of index (i,j) of the pawn you want to move and where
         """
 
+        # e.g. self.talker.send_move([4,3], [2,3])
         
     def result(self, state = None, action = None):
         """ given the state, just return the result executing the action given

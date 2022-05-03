@@ -1,5 +1,5 @@
 from player import TablutPlayer
 
-tp = TablutPlayer(color = "white", player_name = "ASimplexMind")
+tp = TablutPlayer(color = "WHITE", player_name = "ASimplexMind ")
 
 
