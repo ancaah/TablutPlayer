@@ -20,7 +20,6 @@ class TablutPlayer:
              self.talker = talker
         
         self.initial = self.talker.get_state()
-        print(self.initial)
         self.goal = goal
         Problem.__init__(self, self.initial, goal)
 

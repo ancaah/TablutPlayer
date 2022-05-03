@@ -67,25 +67,44 @@ class Talker:
         # Converting byte into json 
         json_state = json.loads(current_state_server_bytes)
 
-        self.converter.json_to_matrix(json_state)
-        return json_state
 
-        #return self.converter.json_to_matrix(json_state)
+        return self.converter.json_to_matrix(json_state)
 
 class Pawn(Enum):
+    EMPTY = 0
     WHITE = 1
     BLACK = 2
     KING = 3
 
-
 class Converter:
+
     def json_to_matrix(self, json_state):
-        json_list = json.load(json_state)
-        print(json_list)
-        '''
-        state = np.zeros()
+    
+        # Convert to list
+        data = list(json_state.items())
+        # Convert to array
+        ar = np.array(data, dtype = object)
+        # Selecting board (the array is (2,2) matrix, it has board and turn info)
+        board_array = np.array(ar[0,1], dtype=object)
+        
+        # Converting in a numerical matrix
+        state = np.zeros((9,9), dtype = Pawn)
         for i in range(0,9):
             for j in range (0,9):
+                if board_array[i,j] == 'EMPTY':
+                    state[i,j] = Pawn.EMPTY.value
+                elif board_array[i,j] == 'WHITE':
+                    state[i,j] = Pawn.WHITE.value
+                elif board_array[i,j] == 'BLACK':
+                    state[i,j] = Pawn.BLACK.value
+                elif board_array[i,j] == 'KING':
+                    state[i,j] = Pawn.KING.value
 
+        print(state)
+        
+        return state
+                    
+
+    '''
     #def matrix_to_json(self, matrix):
     '''
