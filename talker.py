@@ -2,10 +2,12 @@ from ast import Constant
 import socket
 import struct
 import json
+import numpy as np
+from enum import Enum
 
 #############################
 # Talker will manage the connection and all the communication to and from the server  
-# Additionally, it will converter the json state into matrix
+# Additionally, it will converter the json state into matrix using Converter class.
 #############################
 
 class Talker: 
@@ -65,16 +67,25 @@ class Talker:
         # Converting byte into json 
         json_state = json.loads(current_state_server_bytes)
 
-        #print(current_state_server_bytes)
-        #print(json_state)
-
+        self.converter.json_to_matrix(json_state)
         return json_state
 
         #return self.converter.json_to_matrix(json_state)
+
+class Pawn(Enum):
+    WHITE = 1
+    BLACK = 2
+    KING = 3
+
 
 class Converter:
     def json_to_matrix(self, json_state):
         json_list = json.load(json_state)
         print(json_list)
+        '''
+        state = np.zeros()
+        for i in range(0,9):
+            for j in range (0,9):
 
     #def matrix_to_json(self, matrix):
+    '''

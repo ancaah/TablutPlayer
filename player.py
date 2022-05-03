@@ -3,9 +3,9 @@ import socket
 import struct
 import json
 from talker import Talker
-from search import *
-from utils import *
-from reporting import *
+from aima.search import *
+from aima.utils import *
+from aima.reporting import *
 
 ##################################
 # The Tablut Player, indeed. It will interface with Talker to speak to the server
@@ -20,7 +20,7 @@ class TablutPlayer:
              self.talker = talker
         
         self.initial = self.talker.get_state()
-        print (self.initial)
+        print(self.initial)
         self.goal = goal
         Problem.__init__(self, self.initial, goal)
 

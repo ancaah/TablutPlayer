@@ -1,4 +1,4 @@
-from search import *
+from aima.search import *
 from collections import defaultdict, deque, Counter
 import math
 
