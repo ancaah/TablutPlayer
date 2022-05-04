@@ -3,6 +3,7 @@ import socket
 import struct
 import json
 from talker import Talker
+from talker import Pawn
 from aima.search import *
 from aima.utils import *
 from aima.reporting import *
@@ -19,6 +20,9 @@ class TablutPlayer:
         else:
              self.talker = talker
         
+        # Array of camp cells (a4, a5, a6, b5, i4, ...)
+        self.camps = [[3,0], [4,0], [5,0], [4,1], [3,8], [4,8], [5,8], [4,7], [0,3], [0,4], [0,5], [1,4], [8,3], [8,4], [8,5], [7,4]]
+
         self.initial = self.talker.get_state()
         self.goal = goal
         Problem.__init__(self, self.initial, goal)
@@ -35,6 +39,191 @@ class TablutPlayer:
 
         Tablut: the actions given must be the couple of index (i,j) of the pawn you want to move and where
         """
+
+        # List of possible moves for a given state
+        result = []
+
+        # Variables that tells if you *can* keep moving in a given direction, if false it means you found an obstacle
+        up, down, right, left = (True, True, True, True)
+
+        for i in range(0,9):
+            for j in range (0,9):
+                if state[i,j] != Pawn.EMPTY.value:
+
+                    # The selected cell has a White pawn in it
+                    if state[i,j] == Pawn.WHITE.value:
+
+                        # K variable moves the pawn in the matrix
+                        k = 1
+                        while k < 8 and (up == True or down == True or right == True or left == True):
+                            
+                            # Check if you can keep moving up
+                            if up == True:
+                                newRow = i-k
+                                
+                                # Check if index is out of bounds
+                                if newRow == 0: up = False
+                                
+                                if up:
+                                    # Check if the destination cell is a Camp
+                                    for cell in self.camps:
+                                        if cell[0] == newRow and cell[1] == j:
+                                            up = False
+                                            break
+                                    # Check if the destination cell is a the Castle
+                                    if newRow == 4 and j == 4:
+                                        up = False
+
+                                    # Check if you found another Pawn/King
+                                    if up and state[newRow,j] != Pawn.EMPTY.value: up = False
+                                    # If this is a proper move, add it to the result in a tuple: (from, to)
+                                    else: result.append(([i,j][newRow,j]))
+
+                            # Check if you can keep moving down
+                            if down == True:
+                                newRow = i+k
+                                if newRow == 8: down = False
+                                
+                                if down:
+                                    for cell in self.camps:
+                                        if cell[0] == newRow and cell[1] == j:
+                                            down = False
+                                            break
+                                    if newRow == 4 and j == 4:
+                                        up = False
+                                    
+                                    if down and state[newRow,j] != Pawn.EMPTY.value: down = False
+                                    else: result.append(([i,j][newRow,j]))
+
+                            # Check if you can keep moving left
+                            if left == True:
+                                newCol = j-k
+                                if newCol == 0: left = False
+                                
+                                if left:
+                                    for cell in self.camps:
+                                        if cell[0] == i and cell[1] == newCol:
+                                            left = False
+                                            break
+                                    if i == 4 and newCol == 4:
+                                        up = False
+                                    
+                                    if left and state[i,newCol] != Pawn.EMPTY.value: left = False
+                                    else: result.append(([i,j][i,newCol]))
+
+                            # Check if you can keep moving right
+                            if right == True:
+                                newCol = j+k
+                                if newCol == 9: right = False
+                                
+                                if right:
+                                    for cell in self.camps:
+                                        if cell[0] == i and cell[1] == newCol:
+                                            right = False
+                                            break
+                                    if i == 4 and newCol == 4:
+                                        up = False
+                                    
+                                    if right and state[i,newCol] != Pawn.EMPTY.value: right = False
+                                    else: result.append(([i,j][i,newCol]))
+
+                            # Checked all four direction, so we extend the "radius" (k) and iterate
+                            k = k + 1
+
+                    up, down, right, left = (True, True, True, True)
+
+
+                    # WIP ### WIP ### WIP ### WIP ### WIP
+                    # WIP FROM NOW UNTIL PAWN.KING.VALUE
+                    # WIP ### WIP ### WIP ### WIP ### WIP
+
+                    # The selected cell has a Black pawn in it
+                    if state[i,j] == Pawn.BLACK.value:
+
+                        # K variable moves the pawn in the matrix
+                        k = 1
+                        while k < 8 and (up == True or down == True or right == True or left == True):
+                            
+                            # Check if you can keep moving up
+                            if up == True:
+                                newRow = i-k
+                                
+                                # Check if index is out of bounds
+                                if newRow == 0: up = False
+                                
+                                if up:
+                                    # Check if the destination cell is a Camp
+                                    for cell in self.camps:
+                                        if cell[0] == newRow and cell[1] == j:
+                                            up = False
+                                            break
+                                    # Check if the destination cell is a the Castle
+                                    if newRow == 4 and j == 4:
+                                        up = False
+
+                                    # Check if you found another Pawn/King
+                                    if up and state[newRow,j] != Pawn.EMPTY.value: up = False
+                                    # If this is a proper move, add it to the result in a tuple: (from, to)
+                                    else: result.append(([i,j][newRow,j]))
+
+                            # Check if you can keep moving down
+                            if down == True:
+                                newRow = i+k
+                                if newRow == 8: down = False
+                                
+                                if down:
+                                    for cell in self.camps:
+                                        if cell[0] == newRow and cell[1] == j:
+                                            down = False
+                                            break
+                                    if newRow == 4 and j == 4:
+                                        up = False
+                                    
+                                    if down and state[newRow,j] != Pawn.EMPTY.value: down = False
+                                    else: result.append(([i,j][newRow,j]))
+
+                            # Check if you can keep moving left
+                            if left == True:
+                                newCol = j-k
+                                if newCol == 0: left = False
+                                
+                                if left:
+                                    for cell in self.camps:
+                                        if cell[0] == i and cell[1] == newCol:
+                                            left = False
+                                            break
+                                    if i == 4 and newCol == 4:
+                                        up = False
+                                    
+                                    if left and state[i,newCol] != Pawn.EMPTY.value: left = False
+                                    else: result.append(([i,j][i,newCol]))
+
+                            # Check if you can keep moving right
+                            if right == True:
+                                newCol = j+k
+                                if newCol == 9: right = False
+                                
+                                if right:
+                                    for cell in self.camps:
+                                        if cell[0] == i and cell[1] == newCol:
+                                            right = False
+                                            break
+                                    if i == 4 and newCol == 4:
+                                        up = False
+                                    
+                                    if right and state[i,newCol] != Pawn.EMPTY.value: right = False
+                                    else: result.append(([i,j][i,newCol]))
+
+                            # Checked all four direction, so we extend the "radius" (k) and iterate
+                            k = k + 1
+                    elif state[i,j] == 'BLACK':
+                        state[i,j] = Pawn.BLACK.value
+                    elif state[i,j] == 'KING':
+                        state[i,j] = Pawn.KING.value
+                        
+                    # WIP ### WIP ### WIP ### WIP ### WIP
+                    # WIP ### WIP ### WIP ### WIP ### WIP
+
 
         # e.g. self.talker.send_move([4,3], [2,3])
         
