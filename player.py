@@ -222,6 +222,8 @@ class TablutPlayer:
                             # Checked all four direction, so we extend the "radius" (k) and iterate
                             k = k + 1
                           
+                    up, down, right, left = (True, True, True, True)
+                    
                     # The selected cell has a KiNG in it  
                     if state[i,j] == Pawn.KING.value:
 
