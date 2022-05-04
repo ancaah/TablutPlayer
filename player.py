@@ -35,7 +35,7 @@ class TablutPlayer:
         #self.goal = goal
         # Goal is accomplished when the KiNG reaches one of the escape Cells. That's why in this case our goal variable
         # is a list of Escape Cells (similar to the Camp cells) 
-        self.goal = [[0,1], [0,2], [0,6], [0,7], [8,1], [8,2], [8,6], [8,7], [1,0], [2,0], [6,0], [7,0], [1,8], [2,8], [6,8], [7,8],]
+        self.goal = [[0,1], [0,2], [0,6], [0,7], [8,1], [8,2], [8,6], [8,7], [1,0], [2,0], [6,0], [7,0], [1,8], [2,8], [6,8], [7,8]]
 
         Problem.__init__(self, self.initial, goal)
 
@@ -58,7 +58,7 @@ class TablutPlayer:
         # Variables that tells if you *can* keep moving in a given direction, if false it means you found an obstacle
         up, down, right, left = (True, True, True, True)
         
-        # WIP, MAYBE SHOULD IMPLEMENT IT 
+        # WIP, MAYBE SHOULD IMPLEMENT IT to ease the process of checking up true, down true, left true, right true
         #keepGoing = True
 
         for i in range(0,9):
@@ -319,6 +319,8 @@ class TablutPlayer:
 
         Tablut: the result will be given from the server. Talker will handle it!
         """
+
+
         
         return self.talker.get_state()
 
