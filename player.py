@@ -63,6 +63,7 @@ class TablutPlayer:
 
         for i in range(0,9):
             for j in range (0,9):
+                # If [i,j] is an empty cell, just do nothing
                 if state[i,j] != Pawn.EMPTY.value:
 
                     # The selected cell has a White pawn in it
@@ -308,6 +309,8 @@ class TablutPlayer:
 
                             # Checked all four direction, so we extend the "radius" (k) and iterate
                             k = k + 1
+
+                    up, down, right, left = (True, True, True, True)
 
         # e.g. self.talker.send_move([4,3], [2,3])
         
