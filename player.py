@@ -27,11 +27,16 @@ class TablutPlayer:
         else:
              self.talker = talker
         
-        # Array of camp cells (a4, a5, a6, b5, i4, ...)
+        # Array of Camp cells (a4, a5, a6, b5, i4, ...)
         self.camps = [[3,0], [4,0], [5,0], [4,1], [3,8], [4,8], [5,8], [4,7], [0,3], [0,4], [0,5], [1,4], [8,3], [8,4], [8,5], [7,4]]
 
         self.initial = self.talker.get_state()
-        self.goal = goal
+        
+        #self.goal = goal
+        # Goal is accomplished when the KiNG reaches one of the escape Cells. That's why in this case our goal variable
+        # is a list of Escape Cells (similar to the Camp cells) 
+        self.goal = [[0,1], [0,2], [0,6], [0,7], [8,1], [8,2], [8,6], [8,7], [1,0], [2,0], [6,0], [7,0], [1,8], [2,8], [6,8], [7,8],]
+
         Problem.__init__(self, self.initial, goal)
 
 
@@ -323,15 +328,28 @@ class TablutPlayer:
         return c + 1
 
     def goal_test(self, state):
-        """Return True if the state is a goal. The default method compares the
-        state to self.goal or checks for state in self.goal if it is a
-        list, as specified in the constructor. Override this method if
-        checking against a single self.goal is not enough."""
-        if isinstance(self.goal, list):
-            return is_in(state, self.goal)
-        else:
-            return state == self.goal
+        """Return True if KiNG reached an Escape Cell"""
 
+        # Just a consideration: what if we already knew the King's position? ^^
+
+        # Search for the KiNG
+        found = False
+        i, j = (0, 0)
+
+        while i < 9 and found == False:
+            while j < 9 and found == False:
+                if state[i,j] == Pawn.KING.value:
+                    found = True 
+                else: j = j + 1
+            if found == False: i = i + 1
+
+        # Check if the KiNG reached an Escape cell
+        for cell in self.goal:
+            if cell[0] == i and cell[1] == j:
+                return True
+        
+        return False
+        
     """ Informated strategies needs to implement the h function.
     The notion of heuristic: a function that estimates (with a certain error) the distance of astate from the goal… admissible? consistent? """
     def h(self, node):
