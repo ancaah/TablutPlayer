@@ -93,7 +93,7 @@ class TablutPlayer:
                                     # Check if you found another Pawn/King
                                     if up and state[newRow,j] != Pawn.EMPTY.value: up = False
                                     # If this is a proper move, add it to the result in a tuple: (from, to)
-                                    else: result.append(([i,j][newRow,j]))
+                                    else: result.append(([i,j],[newRow,j]))
 
                             # Check if you can keep moving down
                             if down == True:
@@ -109,7 +109,7 @@ class TablutPlayer:
                                         up = False
                                     
                                     if down and state[newRow,j] != Pawn.EMPTY.value: down = False
-                                    else: result.append(([i,j][newRow,j]))
+                                    else: result.append(([i,j],[newRow,j]))
 
                             # Check if you can keep moving left
                             if left == True:
@@ -125,7 +125,7 @@ class TablutPlayer:
                                         up = False
                                     
                                     if left and state[i,newCol] != Pawn.EMPTY.value: left = False
-                                    else: result.append(([i,j][i,newCol]))
+                                    else: result.append(([i,j],[i,newCol]))
 
                             # Check if you can keep moving right
                             if right == True:
@@ -141,7 +141,7 @@ class TablutPlayer:
                                         up = False
                                     
                                     if right and state[i,newCol] != Pawn.EMPTY.value: right = False
-                                    else: result.append(([i,j][i,newCol]))
+                                    else: result.append(([i,j],[i,newCol]))
 
                             # Checked all four direction, so we extend the "radius" (k) and iterate
                             k = k + 1
@@ -175,7 +175,7 @@ class TablutPlayer:
                                     # Check if you found another Pawn/King
                                     if up and state[newRow,j] != Pawn.EMPTY.value: up = False
                                     # If this is a proper move, add it to the result in a tuple: (from, to)
-                                    else: result.append(([i,j][newRow,j]))
+                                    else: result.append(([i,j],[newRow,j]))
 
                             # Check if you can keep moving down
                             if down == True:
@@ -191,7 +191,7 @@ class TablutPlayer:
                                         up = False
                                     
                                     if down and state[newRow,j] != Pawn.EMPTY.value: down = False
-                                    else: result.append(([i,j][newRow,j]))
+                                    else: result.append(([i,j],[newRow,j]))
 
                             # Check if you can keep moving left
                             if left == True:
@@ -207,7 +207,7 @@ class TablutPlayer:
                                         up = False
                                     
                                     if left and state[i,newCol] != Pawn.EMPTY.value: left = False
-                                    else: result.append(([i,j][i,newCol]))
+                                    else: result.append(([i,j],[i,newCol]))
 
                             # Check if you can keep moving right
                             if right == True:
@@ -223,7 +223,7 @@ class TablutPlayer:
                                         up = False
                                     
                                     if right and state[i,newCol] != Pawn.EMPTY.value: right = False
-                                    else: result.append(([i,j][i,newCol]))
+                                    else: result.append(([i,j],[i,newCol]))
 
                             # Checked all four direction, so we extend the "radius" (k) and iterate
                             k = k + 1
@@ -257,7 +257,7 @@ class TablutPlayer:
                                     # Check if you found another Pawn/King
                                     if up and state[newRow,j] != Pawn.EMPTY.value: up = False
                                     # If this is a proper move, add it to the result in a tuple: (from, to)
-                                    else: result.append(([i,j][newRow,j]))
+                                    else: result.append(([i,j],[newRow,j]))
 
                             # Check if you can keep moving down
                             if down == True:
@@ -273,7 +273,7 @@ class TablutPlayer:
                                         up = False
                                     
                                     if down and state[newRow,j] != Pawn.EMPTY.value: down = False
-                                    else: result.append(([i,j][newRow,j]))
+                                    else: result.append(([i,j],[newRow,j]))
 
                             # Check if you can keep moving left
                             if left == True:
@@ -289,7 +289,7 @@ class TablutPlayer:
                                         up = False
                                     
                                     if left and state[i,newCol] != Pawn.EMPTY.value: left = False
-                                    else: result.append(([i,j][i,newCol]))
+                                    else: result.append(([i,j],[i,newCol]))
 
                             # Check if you can keep moving right
                             if right == True:
@@ -305,7 +305,7 @@ class TablutPlayer:
                                         up = False
                                     
                                     if right and state[i,newCol] != Pawn.EMPTY.value: right = False
-                                    else: result.append(([i,j][i,newCol]))
+                                    else: result.append(([i,j],[i,newCol]))
 
                             # Checked all four direction, so we extend the "radius" (k) and iterate
                             k = k + 1
@@ -320,9 +320,15 @@ class TablutPlayer:
         Tablut: the result will be given from the server. Talker will handle it!
         """
 
+        startingPosition, endingPosition = action
+        pawn = state[startingPosition]
+        state[startingPosition] = Pawn.EMPTY.value
+        state[endingPosition] = pawn
 
+        # i don't understand this line but I believe it's some test
+        #return self.talker.get_state()
         
-        return self.talker.get_state()
+        return state
 
     def path_cost(self, c, state1, action, state2):
         """Return the cost of a solution path that arrives at state2 from
