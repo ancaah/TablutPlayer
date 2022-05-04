@@ -27,6 +27,8 @@ class TablutPlayer:
         else:
              self.talker = talker
         
+        self.color = color
+
         # Array of Camp cells (a4, a5, a6, b5, i4, ...)
         self.camps = [[3,0], [4,0], [5,0], [4,1], [3,8], [4,8], [5,8], [4,7], [0,3], [0,4], [0,5], [1,4], [8,3], [8,4], [8,5], [7,4]]
 
@@ -34,7 +36,7 @@ class TablutPlayer:
         
         #self.goal = goal
         # Goal is accomplished when the KiNG reaches one of the escape Cells. That's why in this case our goal variable
-        # is a list of Escape Cells (similar to the Camp cells) 
+        # is a list of Escape Cells (similar to the Camp cells). This array is actually useful only for WHITE Player
         self.goal = [[0,1], [0,2], [0,6], [0,7], [8,1], [8,2], [8,6], [8,7], [1,0], [2,0], [6,0], [7,0], [1,8], [2,8], [6,8], [7,8]]
 
         Problem.__init__(self, self.initial, goal)
@@ -339,7 +341,8 @@ class TablutPlayer:
         return c + 1
 
     def goal_test(self, state):
-        """Return True if KiNG reached an Escape Cell"""
+        """Return True if KiNG reached an Escape Cell (White player)
+            Return True if KiNG is captured (Black player)"""
 
         # Just a consideration: what if we already knew the King's position? ^^
 
@@ -354,11 +357,41 @@ class TablutPlayer:
                 else: j = j + 1
             if found == False: i = i + 1
 
-        # Check if the KiNG reached an Escape cell
-        for cell in self.goal:
-            if cell[0] == i and cell[1] == j:
-                return True
-        
+        # Player WHITE
+        if self.color == "WHITE":
+            # Check if the KiNG reached an Escape cell
+            for cell in self.goal:
+                if cell[0] == i and cell[1] == j:
+                    return True
+
+        # Player BLACK
+        elif self.color == "BLACK":
+            # Check KiNG's sorroundings
+            blocks = 0
+            # KiNG in the Castle
+            if i == 4 and j == 4:
+                if state[i+1,j] == Pawn.BLACK.value: blocks = blocks + 1
+                if state[i-1,j] == Pawn.BLACK.value: blocks = blocks + 1
+                if state[i,j+1] == Pawn.BLACK.value: blocks = blocks + 1
+                if state[i,j-1] == Pawn.BLACK.value: blocks = blocks + 1
+                if blocks == 4: return True
+            
+            # KiNG next to the Castle
+            elif abs(i - 4) + abs(j - 4) == 1:
+                if state[i+1,j] == Pawn.BLACK.value or (i+1 == 4 and j == 4): blocks = blocks + 1
+                if state[i-1,j] == Pawn.BLACK.value or (i-1 == 4 and j == 4): blocks = blocks + 1
+                if state[i,j+1] == Pawn.BLACK.value or (i == 4 and j+1 == 4): blocks = blocks + 1
+                if state[i,j-1] == Pawn.BLACK.value or (i == 4 and j-1 == 4): blocks = blocks + 1
+                if blocks == 4: return True
+            
+            # KiNG is in another place of the map
+            else:
+                if state[i+1,j] == Pawn.BLACK.value or [i+1,j] in self.camps: blocks = blocks + 1
+                if state[i+1,j] == Pawn.BLACK.value or [i+1,j] in self.camps: blocks = blocks + 1
+                if state[i+1,j] == Pawn.BLACK.value or [i+1,j] in self.camps: blocks = blocks + 1
+                if state[i+1,j] == Pawn.BLACK.value or [i+1,j] in self.camps: blocks = blocks + 1
+                if blocks >= 2: return True
+                
         return False
         
     """ Informated strategies needs to implement the h function.
