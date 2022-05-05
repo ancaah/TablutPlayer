@@ -3,17 +3,16 @@ from operator import truediv
 import socket
 import struct
 import json
-from tools import Talker
 from tools import Pawn
 from aima.search import *
 from aima.utils import *
 from aima.reporting import *
 
 ##################################
-# The Tablut Player, indeed. It will interface with Talker to speak to the server
+# The Tablut Player, indeed.
 ##################################
  
-class TablutPlayer:
+class TablutPlayer(Problem):
 
     # This function, if used giving as parameters two cells in some Camps, returns true if they belong to the same Camp 
     def isSameCamp(_from, _to):
@@ -21,18 +20,14 @@ class TablutPlayer:
             return True
         else: return False
 
-    def __init__(self, color, player_name, goal = None, talker = None):
-        if talker is None:
-            self.talker = Talker(color, player_name)
-        else:
-             self.talker = talker
-        
+    def __init__(self, color, timeout, initial, king_position = [5,5] , goal = None):
         self.color = color
+        self.king_position = king_position
+        self.initial = initial
+        self.timeout = timeout
 
         # Array of Camp cells (a4, a5, a6, b5, i4, ...)
         self.camps = [[3,0], [4,0], [5,0], [4,1], [3,8], [4,8], [5,8], [4,7], [0,3], [0,4], [0,5], [1,4], [8,3], [8,4], [8,5], [7,4]]
-
-        self.initial, _ , self.king_position = self.talker.get_state()
         
         #self.goal = goal
         # Goal is accomplished when the KiNG reaches one of the escape Cells. That's why in this case our goal variable
@@ -314,21 +309,17 @@ class TablutPlayer:
 
                     up, down, right, left = (True, True, True, True)
 
-        # e.g. self.talker.send_move([4,3], [2,3])
         
     def result(self, state = None, action = None):
         """ given the state, just return the result executing the action given
 
-        Tablut: the result will be given from the server. Talker will handle it!
+        Tablut: the result will be given from the server.
         """
 
         startingPosition, endingPosition = action
         pawn = state[startingPosition]
         state[startingPosition] = Pawn.EMPTY.value
         state[endingPosition] = pawn
-
-        # i don't understand this line but I believe it's some test
-        #return self.talker.get_state()
         
         return state
 

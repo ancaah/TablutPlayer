@@ -12,7 +12,7 @@ from enum import Enum
 
 class Talker: 
     # Configuration 
-    def __init__(self, color, player_name, converter = None, sock = None):
+    def __init__(self, name, color, server_ip = 'localhost', converter = None, sock = None):
         if sock is None:
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
         else:
@@ -24,8 +24,8 @@ class Talker:
             self.converter = converter
         
         self.color = color
-        self.player_name = player_name
-        self.enstablish_connection()
+        self.name = name
+        self.server_ip = server_ip
 
     def recvall(self, n):
         # Helper function to recv n bytes or return None if EOF is hit
@@ -37,14 +37,15 @@ class Talker:
             data += packet
         return data
 
+    # connetion and first state receive
     def enstablish_connection(self):
     
         if self.color == 'WHITE':
             # Connect the socket to the port where the server is listening
-            server_address = ('localhost', 5800)
+            server_address = (self.server_ip, 5800)
         elif self.color == 'BLACK':
             #  Connect the socket to the port where the server is listening
-            server_address = ('localhost', 5801)
+            server_address = (self.server_ip, 5801)
         else:
             raise Exception("Se giochi o sei bianco oppure sei nero")
         
@@ -54,21 +55,24 @@ class Talker:
         # Using struct lib in order to represent data as python bytes objects
         # struct.pack(format, val1, val2...) 
         # '>i' means Big Endian(used in network), integer returns a bytes object. 
-        self.sock.send(struct.pack('>i', len(self.player_name)))
-        self.sock.send(self.player_name.encode())
+        self.sock.send(struct.pack('>i', len(self.name)))
+        self.sock.send(self.name.encode())
+
+        return self.get_state()
 
 
-    # Returning the state as a matrix and who's turn
+    # Returning the state as a matrix, who's turn and king_pos
     def get_state(self):
 
         len_bytes = struct.unpack('>i', self.recvall(4))[0]
         current_state_server_bytes = self.sock.recv(len_bytes)
         # Converting byte into json 
         json_state = json.loads(current_state_server_bytes)
-        state, turn = self.converter.json_to_matrix(json_state)
-        return state, turn 
+        state, turn, king_position = self.converter.json_to_matrix(json_state)
+        return state, turn, king_position
     
     # sends move, using Converter to convert move 
+    # it returns the print of the move
     # out: e.g. {"from": "d3", "to": "f5", "turn": "WHITE"}
     def send_move(self, _from, _to):
         turn = self.color
@@ -81,10 +85,9 @@ class Talker:
             "turn" : turn
         })
 
-        print(move)
         self.sock.send(struct.pack('>i', len(move)))
         self.sock.send(move.encode())
-
+        return move
 
 
 class Pawn(Enum):
@@ -118,8 +121,6 @@ class Converter:
                     state[i,j] = Pawn.KING.value
                     king_position = (i,j)
 
-        print(state)
-        
         return state, turn, king_position
 
     def box_to_string(self, row, col):
