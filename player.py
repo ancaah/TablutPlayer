@@ -21,50 +21,67 @@ class TablutPlayer(Problem):
             return True
         else: return False
 
+    def inc(v):
+        return v + 1
+
+    def dec(v):
+        return v - 1
+
+    # Return True the given Cell is for sure out of the matrix, False otherwise
+    def cellIsOutOfMatrix(row, col):
+        if row < 0 or row > 8 or col < 0 or col > 8: return True
+        return False
+
+    # Return True if the given Cell is for sure into the matrix, False otherwise
+    def cellIsIntoMatrix(row, col):
+        if row >= 0 and row <= 8 and col >= 0 and col <= 8: return True
+        return False   
+
+    # dir is the direction to check: "up", "down", "left" or "right"
+    # Return True if the given direction doesn't have any obstacles between the KiNG and the Escape Cells
+    def checkIfPathIsFree(self, state, kingRow, kingCol, dir):
+        
+        # Using variables r and c as row and cols
+        # Just one of them will change, depending on the direction that needs to get checked
+        if dir == "up":   
+            r = kingRow - 1
+            c = kingCol
+            op = self.dec
+        elif dir == "down":
+            r = kingRow + 1
+            c = kingCol
+            op = self.inc
+        if dir == "left":   
+            r = kingRow
+            c = kingCol - 1
+            op = self.dec
+        elif dir == "right":
+            r = kingRow
+            c = kingCol + 1
+            op = self.inc
+
+        while self.cellIsIntoMatrix(r, c) and state[r, c] == Pawn.EMPTY.value and [r, c] not in self.camps and not [r, c] == self.castle:
+            if dir == "up" or dir == "down":   
+                r = op(r)
+            if dir == "left" or dir == "right":
+                c = op(c)
+        if self.cellIsOutOfMatrix(r, c): 
+            return True # Escape path in direction dir is free
+        return False        
+
     def freeKingPaths(self, state):
         kingCol = self.king_position[1]
         kingRow = self.king_position[0]
 
         counter = 0
 
-        # Check if up and down escapes are free
-        # Case 1 - only up
-        if kingCol in [1, 7] and kingRow < 4:    
-            i = kingRow - 1 
-            while i >= 0 and state[i,kingCol] == Pawn.EMPTY.value:
-                i = i - 1
-            if i < 0: counter = counter + 1 # Up escape path is free
-        # Case 2 - up and down
-        if kingCol in [2, 6]:    
-            i = kingRow - 1 
-            while i >= 0 and state[i,kingCol] == Pawn.EMPTY.value:
-                i = i - 1
-            if i < 0: counter = counter + 1 # Up escape path is free
+        # Count how many Escapes are free
+        counter += self.checkIfPathIsFree(self, kingRow, kingCol, "up")
+        counter += self.checkIfPathIsFree(self, kingRow, kingCol, "right")
+        counter += self.checkIfPathIsFree(self, kingRow, kingCol, "down")
+        counter += self.checkIfPathIsFree(self, kingRow, kingCol, "left")
 
-            i = kingRow + 1 
-            while i <= 8 and state[i,kingCol] == Pawn.EMPTY.value:
-                i = i + 1
-            if i < 0: counter = counter + 1 # Up escape path is free
-
-        # Check if down escape is free
-        if kingCol in [1, 7] and kingRow > 4:    
-            i = kingRow + 1 
-            while i <= 8 and state[i,kingCol] == Pawn.EMPTY.value:
-                i = i + 1
-            if i > 8: counter = counter + 1 # Down escape path is free
-
-        # Check if left escape is free
-        if kingCol in [1, 7] and kingRow < 4:    
-            i = kingRow - 1 
-            while i >= 0 and state[i,kingCol] == Pawn.EMPTY.value:
-                i = i - 1
-            if i == -1: counter = counter + 1 # Up escape path is free
-
-
-        for i in range(0,9):
-            if state[i, kingCol] != Pawn.EMPTY.value:
-
-        
+        return counter
 
     def __init__(self, color, timeout, initial, king_position = [4,4] , goal = None):
         self.color = color
@@ -74,14 +91,13 @@ class TablutPlayer(Problem):
 
         # Array of Camp cells (a4, a5, a6, b5, i4, ...)
         self.camps = [[3,0], [4,0], [5,0], [4,1], [3,8], [4,8], [5,8], [4,7], [0,3], [0,4], [0,5], [1,4], [8,3], [8,4], [8,5], [7,4]]
-        
+        self.castle = [4,4]
         #self.goal = goal
         # Goal is accomplished when the KiNG reaches one of the escape Cells. That's why in this case our goal variable
         # is a list of Escape Cells (similar to the Camp cells). This array is actually useful only for WHITE Player
         self.goal = [[0,1], [0,2], [0,6], [0,7], [8,1], [8,2], [8,6], [8,7], [1,0], [2,0], [6,0], [7,0], [1,8], [2,8], [6,8], [7,8]]
 
         Problem.__init__(self, self.initial, goal)
-
 
     def actions(self, state):
         """Just write all the actions executable in this state. First of all check if the state is valid, then initialize a vector e.g. result[] and with a list of condition on the state just fill it with all possible actions. e.g.: 
