@@ -3,6 +3,7 @@ from operator import truediv
 import socket
 import struct
 import json
+from tracemalloc import start
 from tools import Pawn
 from aima.search import *
 from aima.utils import *
@@ -320,6 +321,10 @@ class TablutPlayer(Problem):
         pawn = state[startingPosition]
         state[startingPosition] = Pawn.EMPTY.value
         state[endingPosition] = pawn
+
+        # if the king is moved, update his position
+        if startingPosition[0] == self.king_position[0] and startingPosition[1] == self.king_position[1]:
+            self.king_position = endingPosition 
         
         return state
 
@@ -337,17 +342,21 @@ class TablutPlayer(Problem):
 
         # Just a consideration: what if we already knew the King's position? ^^
 
+        '''
         # Search for the KiNG
         found = False
         i, j = (0, 0)
-
         while i < 9 and found == False:
             while j < 9 and found == False:
                 if state[i,j] == Pawn.KING.value:
                     found = True 
                 else: j = j + 1
             if found == False: i = i + 1
+        '''
 
+        i,j = self.king_position
+
+        
         # Player WHITE
         if self.color == "WHITE":
             # Check if the KiNG reached an Escape cell
