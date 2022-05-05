@@ -116,10 +116,11 @@ class Converter:
                     state[i,j] = Pawn.BLACK.value
                 elif board_array[i,j] == 'KING':
                     state[i,j] = Pawn.KING.value
+                    king_position = (i,j)
 
         print(state)
         
-        return state, turn
+        return state, turn, king_position
 
     def box_to_string(self, row, col):
         # converting row/call index into alphanumerical value e.g. h1 (97 is the value of a in ASCII table)

@@ -3,8 +3,8 @@ from operator import truediv
 import socket
 import struct
 import json
-from talker import Talker
-from talker import Pawn
+from tools import Talker
+from tools import Pawn
 from aima.search import *
 from aima.utils import *
 from aima.reporting import *
@@ -32,7 +32,7 @@ class TablutPlayer:
         # Array of Camp cells (a4, a5, a6, b5, i4, ...)
         self.camps = [[3,0], [4,0], [5,0], [4,1], [3,8], [4,8], [5,8], [4,7], [0,3], [0,4], [0,5], [1,4], [8,3], [8,4], [8,5], [7,4]]
 
-        self.initial = self.talker.get_state()
+        self.initial, _ , self.king_position = self.talker.get_state()
         
         #self.goal = goal
         # Goal is accomplished when the KiNG reaches one of the escape Cells. That's why in this case our goal variable
