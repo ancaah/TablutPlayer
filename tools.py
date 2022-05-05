@@ -131,23 +131,27 @@ class Converter:
 class Utils:
     # This function, if used giving as parameters **two cells in some Camps**, returns true if they belong to the same Camp 
     # This function CANNOT BEHAVE WELL if you change the dimensions of the checkerboard or the camps
-    def isSameCamp(_from, _to):
-        if abs(_from[0] - _to[0]) + abs(_from[1] - _to[1]) <= 2: 
+    def isSameCamp(self, _from, _to):
+        if abs(_from[0] - _to[0]) + abs(_from[1] - _to[1]) <= 2:
             return True
         else: return False
 
-    def inc(v):
+    def inc(self, v):
         return v + 1
 
-    def dec(v):
+    def dec(self, v):
         return v - 1
 
     # Return True the given Cell is for sure out of the matrix, False otherwise
-    def cellIsOutOfMatrix(row, col):
+    def cellIsOutOfMatrix(self, row, col):
         if row < 0 or row > 8 or col < 0 or col > 8: return True
         return False
 
     # Return True if the given Cell is for sure into the matrix, False otherwise
-    def cellIsIntoMatrix(row, col):
+    def cellIsIntoMatrix(self, row, col):
         if row >= 0 and row <= 8 and col >= 0 and col <= 8: return True
         return False   
+    
+    def changeCell(self, state, row, col, val):
+        state[row, col] = val
+

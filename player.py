@@ -19,14 +19,14 @@ class TablutPlayer(Problem):
     # dir is the direction to check: "up", "down", "left" or "right"
     # Return True if the given direction doesn't have any obstacles between the KiNG and the Escape Cells
     # Obstacles are Camps, other Pawns, and the Castle
-    def checkIfPathIsFree(self, state, row, col, operation, dir):
+    def checkIfPathIsFree(self, state, row, col, operation, _d):
         # Just one between row and col will change, depending on the direction that needs to get checked
-        while Utils.cellIsIntoMatrix(row, col) and state[row, col] == Pawn.EMPTY.value and [row, col] not in self.camps and not [row, col] == self.castle:
-            if dir == "up" or dir == "down":   
+        while Utils.cellIsIntoMatrix(Utils, row, col) and state[row, col] == Pawn.EMPTY.value and [row, col] not in self.camps and not [row, col] == self.castle:
+            if _d == "up" or _d == "down":
                 row = operation(row)
-            elif dir == "left" or dir == "right":
+            elif _d == "left" or _d == "right":
                 col = operation(col)
-        if Utils.cellIsOutOfMatrix(row, col): 
+        if Utils.cellIsOutOfMatrix(Utils, row, col):
             return True # Escape path in direction dir is free
         return False
 
@@ -37,10 +37,10 @@ class TablutPlayer(Problem):
         counter = 0
 
         # Count how many Escapes are free
-        counter += self.checkIfPathIsFree(self, kingRow-1, kingCol, Utils.dec, "up")
-        counter += self.checkIfPathIsFree(self, kingRow, kingCol+1, Utils.inc, "right")
-        counter += self.checkIfPathIsFree(self, kingRow+1, kingCol, Utils.inc, "down")
-        counter += self.checkIfPathIsFree(self, kingRow, kingCol-1, Utils.dec, "left")
+        counter += self.checkIfPathIsFree(state, kingRow-1, kingCol, Utils.dec, "up")
+        counter += self.checkIfPathIsFree(state, kingRow, kingCol+1, Utils.inc, "right")
+        counter += self.checkIfPathIsFree(state, kingRow+1, kingCol, Utils.inc, "down")
+        counter += self.checkIfPathIsFree(state, kingRow, kingCol-1, Utils.dec, "left")
 
         return counter
 
@@ -76,36 +76,92 @@ class TablutPlayer(Problem):
     # Return a list of the possible moves in the given direction for a Black Pawn
     def giveReachableCells_Black(self, result, state, row, col, operation, dir):
         # Starting position
+        startingRow = row
+        startingCol = col
+
         oldRow = row
         oldCol = col
+
+        dummy_state = np.copy(state)
         # Just one between row and col will change, depending on the direction that needs to get checked
-        while Utils.cellIsIntoMatrix(row, col) and state[row, col] == Pawn.EMPTY.value and not [row, col] == self.castle and ([row, col] not in self.camps or Utils.isSameCamp([row, col],[oldRow, oldCol])):
+        if dir == "up" or dir == "down":
+            row = operation(row)
+        elif dir == "left" or dir == "right":
+            col = operation(col)
+
+        while Utils.cellIsIntoMatrix(row, col) and state[row, col] == Pawn.EMPTY.value and not [row, col] == self.castle and ([row, col] not in self.camps or Utils.isSameCamp([row, col],[startingRow, startingCol])):
+            
+            # We do this to check the freeKingPaths later
+            Utils.changeCell(dummy_state, oldRow, oldCol, Pawn.EMPTY.value)
+            Utils.changeCell(dummy_state, row, col, Pawn.BLACK.value)
+
+            if dir == "up" or dir == "down":
+                oldRow = row
+                row = operation(row)
+            elif dir == "left" or dir == "right":
+                oldCol = col
+                col = operation(col)
+
+            # This is important, if the move we just found gives the White team a winning condition we don't add it
+            if self.freeKingPaths(dummy_state) == 0:
+                result.append(((startingRow,startingCol),(row,col)))
+        
+        return result
+
+    # Return a list of the possible moves in the given direction for a White Pawn
+    def giveReachableCells_White(self, result, state, dummy_state, row, col, operation, dir, colorCondition):
+        # Starting position
+        startingRow = row
+        startingCol = col
+
+        # Just one between row and col will change, depending on the direction that needs to get checked
+        if dir == "up" or dir == "down":
+            row = operation(row)
+        elif dir == "left" or dir == "right":
+            col = operation(col)
+            
+        while Utils.cellIsIntoMatrix(row, col) and state[row, col] == Pawn.EMPTY.value and not [row, col] == self.castle and [row, col] not in self.camps:
             
             if dir == "up" or dir == "down":
                 row = operation(row)
             elif dir == "left" or dir == "right":
                 col = operation(col)
-            result.append(((oldRow,oldCol),(row,col)))
+            result.append(((startingRow,startingCol),(row,col)))
         
         return result
     
-    # This function returns the list of actions that the Black Player sould expand
+    # This function returns the list of actions that the Black Player should expand
     def blackBehaviour(self, state):
         result = []
-
         for i in range(0,9):
             for j in range (0,9):
                 # The selected cell has a Black pawn in it, that means we could move it
                 if state[i,j] == Pawn.BLACK.value:
                     # Check actions in up, right, down and left direction
-                    self.giveReachableCells_Black(result, state, Utils.dec(i), j, Utils.dec, "up")
-                    self.giveReachableCells_Black(result, state, i, Utils.inc(j), Utils.inc, "right")
-                    self.giveReachableCells_Black(result, state, Utils.inc(i), j, Utils.inc, "down")
-                    self.giveReachableCells_Black(result, state, i, Utils.dec(j), Utils.dec, "left")
+                    self.giveReachableCells_Black(result, state, i, j, Utils.dec, "up")
+                    self.giveReachableCells_Black(result, state, i, j, Utils.inc, "right")
+                    self.giveReachableCells_Black(result, state, i, j, Utils.inc, "down")
+                    self.giveReachableCells_Black(result, state, i, j, Utils.dec, "left")
+        return result
+
+    # This function returns the list of actions that the White Player should expand
+    def whiteBehaviour(self, state):
+        result = []
+
+        for i in range(0,9):
+            for j in range (0,9):
+                # The selected cell has a White pawn in it, that means we could move it
+                if state[i,j] == Pawn.WHITE.value or state[i,j] == Pawn.KING.value:
+                    # Check actions in up, right, down and left direction
+                    self.giveReachableCells_White(result, state, i, j, Utils.dec, "up")
+                    self.giveReachableCells_White(result, state, i, j, Utils.inc, "right")
+                    self.giveReachableCells_White(result, state, i, j, Utils.inc, "down")
+                    self.giveReachableCells_White(result, state, i, j, Utils.dec, "left")
+
         return result
 
 
-    ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## 
+    ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
     # I think that this method now should just call blackBehaviour (implemented) or whiteBehaviour (TODO)
     # depending on the player turn.
     # So there are a lot of pending changes to this method
@@ -427,13 +483,14 @@ class TablutPlayer(Problem):
 
         i,j = self.king_position
 
-        
+        # NEED TO ADD WHICH TURN IS RIGHT NOW, SO THAT YOU DECIDE WHAT THE GOAL IS
+        # also this method is shit so let's change that
+
         # Player WHITE
         if self.color == "WHITE":
             # Check if the KiNG reached an Escape cell
-            for cell in self.goal:
-                if cell[0] == i and cell[1] == j:
-                    return True
+            if [i, j] in self.goal:
+                return True
 
         # Player BLACK
         elif self.color == "BLACK":
