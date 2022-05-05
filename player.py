@@ -21,7 +21,52 @@ class TablutPlayer(Problem):
             return True
         else: return False
 
-    def __init__(self, color, timeout, initial, king_position = [5,5] , goal = None):
+    def freeKingPaths(self, state):
+        kingCol = self.king_position[1]
+        kingRow = self.king_position[0]
+
+        counter = 0
+
+        # Check if up and down escapes are free
+        # Case 1 - only up
+        if kingCol in [1, 7] and kingRow < 4:    
+            i = kingRow - 1 
+            while i >= 0 and state[i,kingCol] == Pawn.EMPTY.value:
+                i = i - 1
+            if i < 0: counter = counter + 1 # Up escape path is free
+        # Case 2 - up and down
+        if kingCol in [2, 6]:    
+            i = kingRow - 1 
+            while i >= 0 and state[i,kingCol] == Pawn.EMPTY.value:
+                i = i - 1
+            if i < 0: counter = counter + 1 # Up escape path is free
+
+            i = kingRow + 1 
+            while i <= 8 and state[i,kingCol] == Pawn.EMPTY.value:
+                i = i + 1
+            if i < 0: counter = counter + 1 # Up escape path is free
+
+        # Check if down escape is free
+        if kingCol in [1, 7] and kingRow > 4:    
+            i = kingRow + 1 
+            while i <= 8 and state[i,kingCol] == Pawn.EMPTY.value:
+                i = i + 1
+            if i > 8: counter = counter + 1 # Down escape path is free
+
+        # Check if left escape is free
+        if kingCol in [1, 7] and kingRow < 4:    
+            i = kingRow - 1 
+            while i >= 0 and state[i,kingCol] == Pawn.EMPTY.value:
+                i = i - 1
+            if i == -1: counter = counter + 1 # Up escape path is free
+
+
+        for i in range(0,9):
+            if state[i, kingCol] != Pawn.EMPTY.value:
+
+        
+
+    def __init__(self, color, timeout, initial, king_position = [4,4] , goal = None):
         self.color = color
         self.king_position = king_position
         self.initial = initial
