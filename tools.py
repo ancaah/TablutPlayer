@@ -127,3 +127,27 @@ class Converter:
         # converting row/call index into alphanumerical value e.g. h1 (97 is the value of a in ASCII table)
         res = "" + chr(97 + col) + str(1 + row)
         return res                    
+
+class Utils:
+    # This function, if used giving as parameters **two cells in some Camps**, returns true if they belong to the same Camp 
+    # This function CANNOT BEHAVE WELL if you change the dimensions of the checkerboard or the camps
+    def isSameCamp(_from, _to):
+        if abs(_from[0] - _to[0]) + abs(_from[1] - _to[1]) <= 2: 
+            return True
+        else: return False
+
+    def inc(v):
+        return v + 1
+
+    def dec(v):
+        return v - 1
+
+    # Return True the given Cell is for sure out of the matrix, False otherwise
+    def cellIsOutOfMatrix(row, col):
+        if row < 0 or row > 8 or col < 0 or col > 8: return True
+        return False
+
+    # Return True if the given Cell is for sure into the matrix, False otherwise
+    def cellIsIntoMatrix(row, col):
+        if row >= 0 and row <= 8 and col >= 0 and col <= 8: return True
+        return False   

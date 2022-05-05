@@ -5,6 +5,7 @@ import struct
 import json
 from tracemalloc import start
 from tools import Pawn
+from tools import Utils
 from aima.search import *
 from aima.utils import *
 from aima.reporting import *
@@ -15,59 +16,19 @@ from aima.reporting import *
  
 class TablutPlayer(Problem):
 
-    # This function, if used giving as parameters two cells in some Camps, returns true if they belong to the same Camp 
-    def isSameCamp(_from, _to):
-        if abs(_from[0] - _to[0]) + abs(_from[1] - _to[1]) <= 2: 
-            return True
-        else: return False
-
-    def inc(v):
-        return v + 1
-
-    def dec(v):
-        return v - 1
-
-    # Return True the given Cell is for sure out of the matrix, False otherwise
-    def cellIsOutOfMatrix(row, col):
-        if row < 0 or row > 8 or col < 0 or col > 8: return True
-        return False
-
-    # Return True if the given Cell is for sure into the matrix, False otherwise
-    def cellIsIntoMatrix(row, col):
-        if row >= 0 and row <= 8 and col >= 0 and col <= 8: return True
-        return False   
-
     # dir is the direction to check: "up", "down", "left" or "right"
     # Return True if the given direction doesn't have any obstacles between the KiNG and the Escape Cells
-    def checkIfPathIsFree(self, state, kingRow, kingCol, dir):
-        
-        # Using variables r and c as row and cols
-        # Just one of them will change, depending on the direction that needs to get checked
-        if dir == "up":   
-            r = kingRow - 1
-            c = kingCol
-            op = self.dec
-        elif dir == "down":
-            r = kingRow + 1
-            c = kingCol
-            op = self.inc
-        if dir == "left":   
-            r = kingRow
-            c = kingCol - 1
-            op = self.dec
-        elif dir == "right":
-            r = kingRow
-            c = kingCol + 1
-            op = self.inc
-
-        while self.cellIsIntoMatrix(r, c) and state[r, c] == Pawn.EMPTY.value and [r, c] not in self.camps and not [r, c] == self.castle:
+    # Obstacles are Camps, other Pawns, and the Castle
+    def checkIfPathIsFree(self, state, row, col, operation, dir):
+        # Just one between row and col will change, depending on the direction that needs to get checked
+        while Utils.cellIsIntoMatrix(row, col) and state[row, col] == Pawn.EMPTY.value and [row, col] not in self.camps and not [row, col] == self.castle:
             if dir == "up" or dir == "down":   
-                r = op(r)
-            if dir == "left" or dir == "right":
-                c = op(c)
-        if self.cellIsOutOfMatrix(r, c): 
+                row = operation(row)
+            elif dir == "left" or dir == "right":
+                col = operation(col)
+        if Utils.cellIsOutOfMatrix(row, col): 
             return True # Escape path in direction dir is free
-        return False        
+        return False
 
     def freeKingPaths(self, state):
         kingCol = self.king_position[1]
@@ -76,10 +37,10 @@ class TablutPlayer(Problem):
         counter = 0
 
         # Count how many Escapes are free
-        counter += self.checkIfPathIsFree(self, kingRow, kingCol, "up")
-        counter += self.checkIfPathIsFree(self, kingRow, kingCol, "right")
-        counter += self.checkIfPathIsFree(self, kingRow, kingCol, "down")
-        counter += self.checkIfPathIsFree(self, kingRow, kingCol, "left")
+        counter += self.checkIfPathIsFree(self, kingRow-1, kingCol, Utils.dec, "up")
+        counter += self.checkIfPathIsFree(self, kingRow, kingCol+1, Utils.inc, "right")
+        counter += self.checkIfPathIsFree(self, kingRow+1, kingCol, Utils.inc, "down")
+        counter += self.checkIfPathIsFree(self, kingRow, kingCol-1, Utils.dec, "left")
 
         return counter
 
@@ -99,6 +60,55 @@ class TablutPlayer(Problem):
 
         Problem.__init__(self, self.initial, goal)
 
+    # Returns true if the given cell doesn't have Pawns in it
+    def cellIsFree(self, state, row, col):
+        # Follows a list of controls on the destination
+        
+        # Check if index is out of bounds or not empty
+        if Utils.cellIsOutOfMatrix(row, col): return False
+        # Check if you found another Pawn/King
+        if state[row,col] != Pawn.EMPTY.value: return False
+        # Check if the destination cell is the Castle
+        elif [row, col] == self.castle: return False
+
+        return True
+
+    # Return a list of the possible moves in the given direction for a Black Pawn
+    def giveReachableCells_Black(self, result, state, row, col, operation, dir):
+        # Starting position
+        oldRow = row
+        oldCol = col
+        # Just one between row and col will change, depending on the direction that needs to get checked
+        while Utils.cellIsIntoMatrix(row, col) and state[row, col] == Pawn.EMPTY.value and not [row, col] == self.castle and ([row, col] not in self.camps or Utils.isSameCamp([row, col],[oldRow, oldCol])):
+            
+            if dir == "up" or dir == "down":
+                row = operation(row)
+            elif dir == "left" or dir == "right":
+                col = operation(col)
+            result.append(((oldRow,oldCol),(row,col)))
+        
+        return result
+    
+    # This function returns the list of actions that the Black Player sould expand
+    def blackBehaviour(self, state):
+        result = []
+
+        for i in range(0,9):
+            for j in range (0,9):
+                # The selected cell has a Black pawn in it, that means we could move it
+                if state[i,j] == Pawn.BLACK.value:
+                    # Check actions in up, right, down and left direction
+                    self.giveReachableCells_Black(result, state, Utils.dec(i), j, Utils.dec, "up")
+                    self.giveReachableCells_Black(result, state, i, Utils.inc(j), Utils.inc, "right")
+                    self.giveReachableCells_Black(result, state, Utils.inc(i), j, Utils.inc, "down")
+                    self.giveReachableCells_Black(result, state, i, Utils.dec(j), Utils.dec, "left")
+        return result
+
+
+    ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## 
+    # I think that this method now should just call blackBehaviour (implemented) or whiteBehaviour (TODO)
+    # depending on the player turn.
+    # So there are a lot of pending changes to this method
     def actions(self, state):
         """Just write all the actions executable in this state. First of all check if the state is valid, then initialize a vector e.g. result[] and with a list of condition on the state just fill it with all possible actions. e.g.: 
         m, c, b = state
