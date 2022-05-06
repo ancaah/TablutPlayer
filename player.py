@@ -4,7 +4,6 @@ import socket
 import struct
 import json
 from tracemalloc import start
-from turtle import position
 from tools import Pawn
 from tools import Utils
 from aima.search import *
