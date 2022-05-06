@@ -1,7 +1,9 @@
 from http import server
 import sys
+from aima.games import random_player
 from player import TablutPlayer
 from tools import Talker
+from aima.games import *
 
 #Configuration
 name = "ASimplexMind"
@@ -12,33 +14,41 @@ if len(sys.argv) == 4:
     server_address = sys.argv[3]
 else: server_address = 'localhost'
 
-print(server_address)
+print("\nConnection to: " + server_address)
 
 talker = Talker(name, color, server_address)
-state, _ , _ = talker.enstablish_connection()
-tp = TablutPlayer(color, timeout, state)
+board, _ , _ = talker.enstablish_connection()
+tp = TablutPlayer(color, timeout, board)
 print("\nInitial state:")
-tp.display(state)
+#tp.display(state)
+print(board)
 
 goal = False
 
-while(goal is False):
+#while(goal is False):
     #solve the problem. 
     #tp.solve() returns from i,j to i,j
-
-    #send the move
-    move = talker.send_move([4,3], [2,3])
-    #get the new state
-    state, turn ,king_position = talker.get_state()
-    print("\nMy move:  " + move)
-    tp.display(state)
-    print("\nWaiting for enemy move....")
-    state, turn ,king_position = talker.get_state()
-    print("\nEnemy move:")
-    tp.display(state)
-    #create the new problem
-    tp = TablutPlayer(color, timeout, state, king_position) 
-
+state = GameState(to_move=color, 
+                utility=tp.watcher.compute_utility(board), 
+                board=board, 
+                moves=tp.getAllMoves(board, color))
+move = random_player(tp, state)
+print(move)
+#send the move
+#move = talker.send_move([4,3], [2,3])
+move = talker.send_move(move)
+#get the new state
+board, turn ,king_position = talker.get_state()
+print("\nMy move:  " + move)
+#print(board)
+print("\nWaiting for enemy move....")
+board, turn ,king_position = talker.get_state()
+print("\nEnemy move:")
+#tp.display(state)
+print(board)
+#create the new problem
+#tp = TablutPlayer(color, timeout, board, king_position) 
+exit
 
 
 

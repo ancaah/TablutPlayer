@@ -74,7 +74,8 @@ class Talker:
     # sends move, using Converter to convert move 
     # it returns the print of the move
     # out: e.g. {"from": "d3", "to": "f5", "turn": "WHITE"}
-    def send_move(self, _from, _to):
+    def send_move(self, move):
+        _from, _to = move 
         turn = self.color
         from_s = self.converter.box_to_string(_from[0], _from[1])
         to_s =  self.converter.box_to_string(_to[0], _to[1])
@@ -131,18 +132,18 @@ class Converter:
 class Utils:
     # This function, if used giving as parameters **two cells in some Camps**, returns true if they belong to the same Camp 
     # This function CANNOT BEHAVE WELL if you change the dimensions of the checkerboard or the camps
-    def isSameCamp(self, _from, _to):
+    def isSameCamp(_from, _to):
         if abs(_from[0] - _to[0]) + abs(_from[1] - _to[1]) <= 2:
             return True
         else: return False
 
-    def inc(self, v):
+    def inc(v):
         return v + 1
 
-    def dec(self, v):
+    def dec(v):
         return v - 1
 
-    def check_next_cell(self, position,  _d):
+    def check_next_cell(position,  _d):
         # Up/down return decreased/increased row
         # Right/lef return increased/decreased col
         if _d == "up":
@@ -157,19 +158,20 @@ class Utils:
         return position 
 
     # Return True the given Cell is for sure out of the matrix, False otherwise
-    def cellIsOutOfMatrix(self, position):
+    def cellIsOutOfMatrix(position):
         row = position[0]
         col = position[1]
-        if row < 0 or row > 8 or col < 0 or col > 8: return True
+        if row < 0 or row > 8 or col < 0 or col > 8: 
+            return True
         return False
 
     # Return True if the given Cell is for sure into the matrix, False otherwise
-    def cellIsIntoMatrix(self, position):
+    def cellIsIntoMatrix(position):
         row = position[0]
         col = position[1]
         if row >= 0 and row <= 8 and col >= 0 and col <= 8: return True
         return False   
     
-    def changeCell(self, state, position, val):
+    def changeCell(state, position, val):
         state[position] = val
 
