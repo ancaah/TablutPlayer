@@ -173,7 +173,7 @@ class TablutPlayer(Game):
         pawn = state[startingPosition]
         state[startingPosition] = Pawn.EMPTY.value
         state[endingPosition] = pawn
-
+        
         # if the king is moved, update his position
         if startingPosition[0] == self.king_position[0] and startingPosition[1] == self.king_position[1]:
             self.king_position = endingPosition 
@@ -187,66 +187,42 @@ class TablutPlayer(Game):
 
     def terminal_test(self, state):
         """Return True if this is a final state for the game."""
-        return not self.actions(state)
 
-    ## All this will be moved to terminal_test (from Game)
-    def goal_test(self, state):
-        """Return True if KiNG reached an Escape Cell (White player)
-            Return True if KiNG is captured (Black player)"""
+        # Check if BLACK won
+        blocks = 0
+        
+        i = self.king_position[0]
+        j = self.king_position[1]
 
-        # Just a consideration: what if we already knew the King's position? ^^
+        # WHITE win possible state
+        # KiNG is Free
+        if self.king_position in self.goal:
+            return True
 
-        '''
-        # Search for the KiNG
-        found = False
-        i, j = (0, 0)
-        while i < 9 and found == False:
-            while j < 9 and found == False:
-                if state[i,j] == Pawn.KING.value:
-                    found = True 
-                else: j = j + 1
-            if found == False: i = i + 1
-        '''
-
-        i,j = self.king_position
-
-        # NEED TO ADD WHICH TURN IS RIGHT NOW, SO THAT YOU DECIDE WHAT THE GOAL IS
-        # also this method is shit so let's change that
-
-        # Player WHITE
-        if self.color == "WHITE":
-            # Check if the KiNG reached an Escape cell
-            if [i, j] in self.goal:
+        # BLACK win possible states
+        # KiNG in the Castle (4 blocks needed)
+        if i == 4 and j == 4:
+            if state[i+1,j] == Pawn.BLACK.value: blocks = blocks + 1
+            if state[i-1,j] == Pawn.BLACK.value: blocks = blocks + 1
+            if state[i,j+1] == Pawn.BLACK.value: blocks = blocks + 1
+            if state[i,j-1] == Pawn.BLACK.value: blocks = blocks + 1
+            if blocks == 4: return True
+        
+        # KiNG next to the Castle (3 blocks needed)
+        elif abs(i - 4) + abs(j - 4) == 1:
+            if state[i+1,j] == Pawn.BLACK.value or (i+1 == 4 and j == 4): blocks = blocks + 1
+            if state[i-1,j] == Pawn.BLACK.value or (i-1 == 4 and j == 4): blocks = blocks + 1
+            if state[i,j+1] == Pawn.BLACK.value or (i == 4 and j+1 == 4): blocks = blocks + 1
+            if state[i,j-1] == Pawn.BLACK.value or (i == 4 and j-1 == 4): blocks = blocks + 1
+            if blocks == 4: return True
+        
+        # KiNG is in another place of the map (2 blocks needed)
+        else:
+            if (state[i+1,j] == Pawn.BLACK.value or [i+1,j] in self.camps) and (state[i-1,j] == Pawn.BLACK.value or [i-1,j] in self.camps): 
+                return True
+            elif (state[i,j+1] == Pawn.BLACK.value or [i,j+1] in self.camps) and (state[i,j-1] == Pawn.BLACK.value or [i,j-1] in self.camps): 
                 return True
 
-        # Player BLACK
-        elif self.color == "BLACK":
-            # Check KiNG's sorroundings
-            blocks = 0
-            # KiNG in the Castle
-            if i == 4 and j == 4:
-                if state[i+1,j] == Pawn.BLACK.value: blocks = blocks + 1
-                if state[i-1,j] == Pawn.BLACK.value: blocks = blocks + 1
-                if state[i,j+1] == Pawn.BLACK.value: blocks = blocks + 1
-                if state[i,j-1] == Pawn.BLACK.value: blocks = blocks + 1
-                if blocks == 4: return True
-            
-            # KiNG next to the Castle
-            elif abs(i - 4) + abs(j - 4) == 1:
-                if state[i+1,j] == Pawn.BLACK.value or (i+1 == 4 and j == 4): blocks = blocks + 1
-                if state[i-1,j] == Pawn.BLACK.value or (i-1 == 4 and j == 4): blocks = blocks + 1
-                if state[i,j+1] == Pawn.BLACK.value or (i == 4 and j+1 == 4): blocks = blocks + 1
-                if state[i,j-1] == Pawn.BLACK.value or (i == 4 and j-1 == 4): blocks = blocks + 1
-                if blocks == 4: return True
-            
-            # KiNG is in another place of the map
-            else:
-                if state[i+1,j] == Pawn.BLACK.value or [i+1,j] in self.camps: blocks = blocks + 1
-                if state[i+1,j] == Pawn.BLACK.value or [i+1,j] in self.camps: blocks = blocks + 1
-                if state[i+1,j] == Pawn.BLACK.value or [i+1,j] in self.camps: blocks = blocks + 1
-                if state[i+1,j] == Pawn.BLACK.value or [i+1,j] in self.camps: blocks = blocks + 1
-                if blocks >= 2: return True
-                
         return False
         
     """ Informated strategies needs to implement the h function.
