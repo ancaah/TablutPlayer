@@ -2,6 +2,7 @@ from ast import Constant
 import socket
 import struct
 import json
+from turtle import position
 import numpy as np
 from enum import Enum
 
@@ -142,13 +143,31 @@ class Utils:
     def dec(self, v):
         return v - 1
 
+    def check_next_cell(self, position,  _d):
+        # Up/down return decreased/increased row
+        # Right/lef return increased/decreased col
+        if _d == "up":
+            position[0] -= 1
+        elif _d == "down":
+            position [0] += 1
+        elif _d =="right":
+            position[1] += 1
+        elif _d =="left":
+            position[1] -= 1
+
+        return position 
+
     # Return True the given Cell is for sure out of the matrix, False otherwise
-    def cellIsOutOfMatrix(self, row, col):
+    def cellIsOutOfMatrix(self, position):
+        row = position[0]
+        col = position[1]
         if row < 0 or row > 8 or col < 0 or col > 8: return True
         return False
 
     # Return True if the given Cell is for sure into the matrix, False otherwise
-    def cellIsIntoMatrix(self, row, col):
+    def cellIsIntoMatrix(self, position):
+        row = position[0]
+        col = position[1]
         if row >= 0 and row <= 8 and col >= 0 and col <= 8: return True
         return False   
     

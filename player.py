@@ -4,6 +4,7 @@ import socket
 import struct
 import json
 from tracemalloc import start
+from turtle import position
 from tools import Pawn
 from tools import Utils
 from aima.search import *
@@ -14,33 +15,31 @@ from aima.reporting import *
 # The Tablut Player, indeed.
 ##################################
  
-class TablutPlayer(Problem):
+class TablutPlayer(Game):
 
     # dir is the direction to check: "up", "down", "left" or "right"
     # Return True if the given direction doesn't have any obstacles between the KiNG and the Escape Cells
     # Obstacles are Camps, other Pawns, and the Castle
-    def checkIfPathIsFree(self, state, row, col, operation, _d):
+    def checkIfKingPathIsFree(self, state, _d):
         # Just one between row and col will change, depending on the direction that needs to get checked
-        while Utils.cellIsIntoMatrix(Utils, row, col) and state[row, col] == Pawn.EMPTY.value and [row, col] not in self.camps and not [row, col] == self.castle:
-            if _d == "up" or _d == "down":
-                row = operation(row)
-            elif _d == "left" or _d == "right":
-                col = operation(col)
-        if Utils.cellIsOutOfMatrix(Utils, row, col):
+        position = self.king_position.copy()
+        Utils.check_next_cell(Utils, position, _d)
+        
+        while Utils.cellIsIntoMatrix(Utils, position) and state[position] == Pawn.EMPTY.value and [position] not in self.camps and not [position] == self.castle:
+            Utils.check_next_cell(Utils, position, _d)
+
+        if Utils.cellIsOutOfMatrix(Utils, position):
             return True # Escape path in direction dir is free
         return False
 
     def freeKingPaths(self, state):
-        kingCol = self.king_position[1]
-        kingRow = self.king_position[0]
-
+        
         counter = 0
-
         # Count how many Escapes are free
-        counter += self.checkIfPathIsFree(state, kingRow-1, kingCol, Utils.dec, "up")
-        counter += self.checkIfPathIsFree(state, kingRow, kingCol+1, Utils.inc, "right")
-        counter += self.checkIfPathIsFree(state, kingRow+1, kingCol, Utils.inc, "down")
-        counter += self.checkIfPathIsFree(state, kingRow, kingCol-1, Utils.dec, "left")
+        counter += self.checkIfKingPathIsFree(state, "up")
+        counter += self.checkIfKingPathIsFree(state, "right")
+        counter += self.checkIfKingPathIsFree(state, "down")
+        counter += self.checkIfKingPathIsFree(state, "left")
 
         return counter
 
@@ -74,58 +73,44 @@ class TablutPlayer(Problem):
         return True
 
     # Return a list of the possible moves in the given direction for a Black Pawn
-    def giveReachableCells_Black(self, result, state, row, col, operation, dir):
+    def giveReachableCells_Black(self, result, state, row, col, _d):
         # Starting position
         startingRow = row
         startingCol = col
-
-        oldRow = row
-        oldCol = col
-
+        position = [row, col]
+        old_position = [row, col]
         dummy_state = np.copy(state)
-        # Just one between row and col will change, depending on the direction that needs to get checked
-        if dir == "up" or dir == "down":
-            row = operation(row)
-        elif dir == "left" or dir == "right":
-            col = operation(col)
 
-        while Utils.cellIsIntoMatrix(row, col) and state[row, col] == Pawn.EMPTY.value and not [row, col] == self.castle and ([row, col] not in self.camps or Utils.isSameCamp([row, col],[startingRow, startingCol])):
+        # Just one between row and col will change, depending on the direction that needs to get checked
+        Utils.check_next_cell(Utils, position, _d)
+
+        while Utils.cellIsIntoMatrix(position) and state[position] == Pawn.EMPTY.value and not [position] == self.castle and ([position] not in self.camps or Utils.isSameCamp([position],[startingRow, startingCol])):
             
             # We do this to check the freeKingPaths later
-            Utils.changeCell(dummy_state, oldRow, oldCol, Pawn.EMPTY.value)
-            Utils.changeCell(dummy_state, row, col, Pawn.BLACK.value)
+            Utils.changeCell(dummy_state, old_position[0], old_position[1], Pawn.EMPTY.value)
+            Utils.changeCell(dummy_state, position[0], position[1], Pawn.BLACK.value)
 
-            if dir == "up" or dir == "down":
-                oldRow = row
-                row = operation(row)
-            elif dir == "left" or dir == "right":
-                oldCol = col
-                col = operation(col)
+            old_position = position.copy()
+
+            Utils.check_next_cell(Utils, position, _d)
 
             # This is important, if the move we just found gives the White team a winning condition we don't add it
             if self.freeKingPaths(dummy_state) == 0:
-                result.append(((startingRow,startingCol),(row,col)))
+                result.append(((startingRow,startingCol),(position)))
         
         return result
 
     # Return a list of the possible moves in the given direction for a White Pawn
-    def giveReachableCells_White(self, result, state, dummy_state, row, col, operation, dir, colorCondition):
+    def giveReachableCells_White(self, result, state, row, col, _d, dummy_state = None, colorCondition = None):
         # Starting position
         startingRow = row
         startingCol = col
-
+        position = [row, col]
         # Just one between row and col will change, depending on the direction that needs to get checked
-        if dir == "up" or dir == "down":
-            row = operation(row)
-        elif dir == "left" or dir == "right":
-            col = operation(col)
+        Utils.check_next_cell(position, _d)
             
-        while Utils.cellIsIntoMatrix(row, col) and state[row, col] == Pawn.EMPTY.value and not [row, col] == self.castle and [row, col] not in self.camps:
-            
-            if dir == "up" or dir == "down":
-                row = operation(row)
-            elif dir == "left" or dir == "right":
-                col = operation(col)
+        while Utils.cellIsIntoMatrix(position) and state[position] == Pawn.EMPTY.value and not [position] == self.castle and [position] not in self.camps:
+            position = Utils.check_next_cell(position, _d)
             result.append(((startingRow,startingCol),(row,col)))
         
         return result
@@ -138,10 +123,10 @@ class TablutPlayer(Problem):
                 # The selected cell has a Black pawn in it, that means we could move it
                 if state[i,j] == Pawn.BLACK.value:
                     # Check actions in up, right, down and left direction
-                    self.giveReachableCells_Black(result, state, i, j, Utils.dec, "up")
-                    self.giveReachableCells_Black(result, state, i, j, Utils.inc, "right")
-                    self.giveReachableCells_Black(result, state, i, j, Utils.inc, "down")
-                    self.giveReachableCells_Black(result, state, i, j, Utils.dec, "left")
+                    self.giveReachableCells_Black(result, state, i, j, "up")
+                    self.giveReachableCells_Black(result, state, i, j, "right")
+                    self.giveReachableCells_Black(result, state, i, j, "down")
+                    self.giveReachableCells_Black(result, state, i, j, "left")
         return result
 
     # This function returns the list of actions that the White Player should expand
@@ -153,13 +138,12 @@ class TablutPlayer(Problem):
                 # The selected cell has a White pawn in it, that means we could move it
                 if state[i,j] == Pawn.WHITE.value or state[i,j] == Pawn.KING.value:
                     # Check actions in up, right, down and left direction
-                    self.giveReachableCells_White(result, state, i, j, Utils.dec, "up")
-                    self.giveReachableCells_White(result, state, i, j, Utils.inc, "right")
-                    self.giveReachableCells_White(result, state, i, j, Utils.inc, "down")
-                    self.giveReachableCells_White(result, state, i, j, Utils.dec, "left")
+                    self.giveReachableCells_White(result, state, i, j,"up")
+                    self.giveReachableCells_White(result, state, i, j, "right")
+                    self.giveReachableCells_White(result, state, i, j, "down")
+                    self.giveReachableCells_White(result, state, i, j, "left")
 
         return result
-
 
     ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
     # I think that this method now should just call blackBehaviour (implemented) or whiteBehaviour (TODO)
