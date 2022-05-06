@@ -54,6 +54,8 @@ class Watcher():
         if Utils.cellIsOutOfMatrix(position): return False
         # Check if you found another Pawn/King
         elif board[position[0], position[1]] != Pawn.EMPTY.value: return False
+        #Check if it's the castle
+        elif position == [4,4]: return False
         # Check if the destionation cell is a Camp.
         elif not isBlack and position in self.camps: return False
         # If it's Black, check also if isSameCamp
@@ -61,7 +63,7 @@ class Watcher():
             if not Utils.isSameCamp(position,starting_pos): return False
 
         # Always in bound.
-        print ("\nFree cell: ", position)
+        #print ("\nFree cell: ", position)
         return True
 
 
@@ -83,13 +85,12 @@ class Watcher():
             # This is important, if the move we just found gives the White team a winning condition we don't add it
             # If the cell is valid add to the results
             if self.freeKingPaths(dummy_board) == 0:
-                result.append(((starting_pos),(curr_pos)))
+                free_cell = curr_pos.copy()
+                result.append(((starting_pos),(free_cell)))
             old_position = curr_pos.copy()
             # Move to the next cell to check
             curr_pos = Utils.check_next_cell(curr_pos, _d)
 
-            
-        
         return result
 
     # Return a list of the possible moves in the given direction for a White Pawn
@@ -103,7 +104,8 @@ class Watcher():
         curr_pos = Utils.check_next_cell(curr_pos, _d)    
         # Check the cell, if it's free, add it to the possible reacheable cells.
         while self.cellIsFree(board, curr_pos):
-            result.append(((starting_pos),(curr_pos)))
+            free_cell = curr_pos.copy() 
+            result.append(((starting_pos),(free_cell)))
             # Moving to the next cell
             curr_pos = Utils.check_next_cell(curr_pos, _d)
 
@@ -138,10 +140,35 @@ class Watcher():
                     self.giveReachableCells_White(result, board, position, "right")
                     self.giveReachableCells_White(result, board, position, "down")
                     self.giveReachableCells_White(result, board, position, "left")
-
+        
         return result
 
-    def doMove(self,board,action):
+
+    def nextCellOccupiedBy(self, board, position, _d):
+        curr_pos = position.copy()
+        curr_pos = Utils.check_next_cell(curr_pos, _d)
+        return board[curr_pos]
+
+    def checkIfEat_BLACK(self, board, position, _d):
+        curr_pos = position.copy()
+        eat_pos = self.nextCellOccupiedBy(board, curr_pos, _d)
+        if eat_pos == Pawn.WHITE.value:
+            curr_pos = self.nextCellOccupiedBy(board, eat_pos, _d)
+            if curr_pos == Pawn.BLACK.value or curr_pos in self.camp:
+                # Eat!
+                board[eat_pos] = Pawn.EMPTY.value
+
+
+    def checkIfEat_WHITE(self, board, position, _d):
+        curr_pos = position.copy()
+        eat_pos = self.nextCellOccupiedBy(board, curr_pos, _d)
+        if eat_pos == Pawn.BLACK.value:
+            curr_pos = self.nextCellOccupiedBy(board, eat_pos, _d)
+            if  curr_pos == Pawn.WHITE.value:
+                # Eat!
+                board[eat_pos] = Pawn.EMPTY.value
+
+    def doMove(self,board,action, player):
         startingPosition, endingPosition = action
         pawn = board[startingPosition]
         board[startingPosition] = Pawn.EMPTY.value
@@ -150,6 +177,22 @@ class Watcher():
         # if the king is moved, update his position
         if startingPosition[0] == self.king_position[0] and startingPosition[1] == self.king_position[1]:
             self.king_position = endingPosition 
+     
+        # Check if someone has been eated!
+        # ATTENTION! The board is going to be modified is something is eated.
+
+        if player == "WHITE":
+            self.checkIfEat_WHITE(board, endingPosition, "up")
+            self.checkIfEat_WHITE(board, endingPosition, "down")
+            self.checkIfEat_WHITE(board, endingPosition, "left")
+            self.checkIfEat_WHITE(board, endingPosition, "right")
+        
+        else: 
+            self.checkIfEat_BLACK(board, endingPosition, "up")
+            self.checkIfEat_BLACK(board, endingPosition, "down")
+            self.checkIfEat_BLACK(board, endingPosition, "left")
+            self.checkIfEat_BLACK(board, endingPosition, "right")
+
     
     # This methods return 1 if WHITE wins, -1 if BLACK wins, otherwise 0
     # Maybe it's possible to identify other values, e.g. 0.3 when eating a pawn

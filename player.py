@@ -53,7 +53,7 @@ class TablutPlayer(Game):
         player = state.to_move
 
         # Make the given move on the copied board, change turn 
-        self.watcher.doMove(board,action)
+        self.watcher.doMove(board,action, player)
         player = ("BLACK" if player == "WHITE" else "WHITE")
         
         return GameState(to_move=player,

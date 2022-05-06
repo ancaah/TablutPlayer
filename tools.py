@@ -126,7 +126,9 @@ class Converter:
 
     def box_to_string(self, row, col):
         # converting row/call index into alphanumerical value e.g. h1 (97 is the value of a in ASCII table)
-        res = "" + chr(97 + col) + str(1 + row)
+        # In the board numbering (8->1, 7->2....)
+        # row = 9 - row
+        res = "" + chr(97 + col) + str(1+ row)
         return res                    
 
 class Utils:
