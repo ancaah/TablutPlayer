@@ -29,7 +29,8 @@ while(goal is False):
                 utility=tp.watcher.compute_utility(board), 
                 board=board, 
                 moves=tp.getAllMoves(board, color))
-    move = random_player(tp, state)
+    # move = random_player(tp, state)
+    move = alpha_beta_player(tp, state)
     print(move)
     move = talker.send_move(move)
     #get the new state

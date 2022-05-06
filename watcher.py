@@ -76,11 +76,12 @@ class Watcher():
 
         # Just one between row and col will change, depending on the direction that needs to get checked   
         # Moving first cell to check
+        old_position = curr_pos.copy()
         curr_pos = Utils.check_next_cell(curr_pos, _d)
 
         while self.cellIsFree(board,curr_pos, True, starting_pos):
             # We do this to check the freeKingPaths later
-            Utils.changeCell( dummy_board, old_position, Pawn.EMPTY.value)
+            Utils.changeCell(dummy_board, old_position, Pawn.EMPTY.value)
             Utils.changeCell(dummy_board, curr_pos, Pawn.BLACK.value)
             # This is important, if the move we just found gives the White team a winning condition we don't add it
             # If the cell is valid add to the results
@@ -144,29 +145,26 @@ class Watcher():
         return result
 
 
-    def nextCellOccupiedBy(self, board, position, _d):
-        curr_pos = position.copy()
-        curr_pos = Utils.check_next_cell(curr_pos, _d)
-        return board[curr_pos]
-
     def checkIfEat_BLACK(self, board, position, _d):
         curr_pos = position.copy()
-        eat_pos = self.nextCellOccupiedBy(board, curr_pos, _d)
-        if eat_pos == Pawn.WHITE.value:
-            curr_pos = self.nextCellOccupiedBy(board, eat_pos, _d)
+        curr_pos = Utils.check_next_cell(curr_pos, _d)
+        eat_pos = curr_pos.copy()
+        if board[eat_pos[0], eat_pos[1]] == Pawn.WHITE.value:
+            curr_pos = Utils.check_next_cell(curr_pos, _d)
             if curr_pos == Pawn.BLACK.value or curr_pos in self.camp:
                 # Eat!
-                board[eat_pos] = Pawn.EMPTY.value
+                board[eat_pos[0], eat_pos[1]] = Pawn.EMPTY.value
 
 
     def checkIfEat_WHITE(self, board, position, _d):
         curr_pos = position.copy()
-        eat_pos = self.nextCellOccupiedBy(board, curr_pos, _d)
-        if eat_pos == Pawn.BLACK.value:
-            curr_pos = self.nextCellOccupiedBy(board, eat_pos, _d)
+        curr_pos = Utils.check_next_cell(curr_pos, _d)
+        eat_pos = position.copy()
+        if board[eat_pos[0], eat_pos[1]] == Pawn.BLACK.value:
+            curr_pos = Utils.check_next_cell(curr_pos, _d)
             if  curr_pos == Pawn.WHITE.value:
                 # Eat!
-                board[eat_pos] = Pawn.EMPTY.value
+                board[eat_pos[0], eat_pos[1]] = Pawn.EMPTY.value
 
     def doMove(self,board,action, player):
         startingPosition, endingPosition = action
