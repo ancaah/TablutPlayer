@@ -2,7 +2,6 @@ from ast import Constant
 import socket
 import struct
 import json
-from turtle import position
 import numpy as np
 from enum import Enum
 
@@ -171,6 +170,6 @@ class Utils:
         if row >= 0 and row <= 8 and col >= 0 and col <= 8: return True
         return False   
     
-    def changeCell(self, state, row, col, val):
-        state[row, col] = val
+    def changeCell(self, state, position, val):
+        state[position] = val
 
