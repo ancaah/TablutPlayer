@@ -1,10 +1,7 @@
 from ast import Constant
-from operator import truediv
 import socket
-from sre_parse import State
 import struct
 import json
-from turtle import position
 from tools import Pawn
 from tools import Utils
 from aima.search import *
@@ -26,7 +23,7 @@ class TablutPlayer(Game):
         curr_pos = self.king_position.copy()
         Utils.check_next_cell(Utils, curr_pos, _d)
         
-        while self.cellIsFree(state, curr_pos) and [curr_pos] not in self.camps:
+        while self.cellIsFree(state, curr_pos):
             Utils.check_next_cell(Utils, curr_pos, _d)
 
         if Utils.cellIsOutOfMatrix(Utils, curr_pos):
@@ -58,9 +55,6 @@ class TablutPlayer(Game):
         # Goal is accomplished when the KiNG reaches one of the escape Cells. That's why in this case our goal variable
         # is a list of Escape Cells (similar to the Camp cells). This array is actually useful only for WHITE Player
         self.goal = [[0,1], [0,2], [0,6], [0,7], [8,1], [8,2], [8,6], [8,7], [1,0], [2,0], [6,0], [7,0], [1,8], [2,8], [6,8], [7,8]]
-
-        Problem.__init__(self, self.initial, goal)
-
     # Returns true if it's a possible destination cell
     # It is not possible to cross or end the movement on cells with Checkers, on the Castle, or on Camp cells
     # Exception! The black checkers can move in the cells of their starting Camp until they leave it. After that, they can’t go back in.

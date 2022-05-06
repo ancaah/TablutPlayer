@@ -18,7 +18,7 @@ talker = Talker(name, color, server_address)
 state, _ , _ = talker.enstablish_connection()
 tp = TablutPlayer(color, timeout, state)
 print("\nInitial state:")
-print(state)
+tp.display(state)
 
 goal = False
 
@@ -31,11 +31,11 @@ while(goal is False):
     #get the new state
     state, turn ,king_position = talker.get_state()
     print("\nMy move:  " + move)
-    print(state)
+    tp.display(state)
     print("\nWaiting for enemy move....")
     state, turn ,king_position = talker.get_state()
     print("\nEnemy move:")
-    print(state)
+    tp.display(state)
     #create the new problem
     tp = TablutPlayer(color, timeout, state, king_position) 
 
