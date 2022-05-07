@@ -149,22 +149,26 @@ class Watcher():
         curr_pos = position.copy()
         curr_pos = Utils.check_next_cell(curr_pos, _d)
         eat_pos = curr_pos.copy()
-        if board[eat_pos[0], eat_pos[1]] == Pawn.WHITE.value:
-            curr_pos = Utils.check_next_cell(curr_pos, _d)
-            if curr_pos == Pawn.BLACK.value or curr_pos in self.camp:
-                # Eat!
-                board[eat_pos[0], eat_pos[1]] = Pawn.EMPTY.value
+        if Utils.cellIsIntoMatrix(curr_pos):
+            if board[eat_pos[0], eat_pos[1]] == Pawn.WHITE.value:
+                curr_pos = Utils.check_next_cell(curr_pos, _d)
+                if Utils.cellIsIntoMatrix(curr_pos): 
+                    if curr_pos == Pawn.BLACK.value or curr_pos in self.camp:
+                        # Eat!
+                        board[eat_pos[0], eat_pos[1]] = Pawn.EMPTY.value
 
 
     def checkIfEat_WHITE(self, board, position, _d):
         curr_pos = position.copy()
         curr_pos = Utils.check_next_cell(curr_pos, _d)
         eat_pos = position.copy()
-        if board[eat_pos[0], eat_pos[1]] == Pawn.BLACK.value:
-            curr_pos = Utils.check_next_cell(curr_pos, _d)
-            if  curr_pos == Pawn.WHITE.value:
-                # Eat!
-                board[eat_pos[0], eat_pos[1]] = Pawn.EMPTY.value
+        if Utils.cellIsIntoMatrix(curr_pos):
+            if board[eat_pos[0], eat_pos[1]] == Pawn.BLACK.value:
+                curr_pos = Utils.check_next_cell(curr_pos, _d)
+                if Utils.cellIsIntoMatrix(curr_pos):
+                    if  curr_pos == Pawn.WHITE.value:
+                        # Eat!
+                        board[eat_pos[0], eat_pos[1]] = Pawn.EMPTY.value
 
     def doMove(self,board,action, player):
         startingPosition, endingPosition = action

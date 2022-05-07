@@ -29,14 +29,14 @@ while(goal is False):
                 utility=tp.watcher.compute_utility(board), 
                 board=board, 
                 moves=tp.getAllMoves(board, color))
-    # move = random_player(tp, state)
+    #move = random_player(tp, state)
     move = alpha_beta_player(tp, state)
     print(move)
     move = talker.send_move(move)
     #get the new state
     board, turn ,king_position = talker.get_state()
     i+=1
-    print("\nMy " + str(i) + " move:  " + move)
+    print("\nMy " + str(i) + "° move:  " + move)
     print(board)
     print("\nWaiting for enemy move....")
     board, turn ,king_position = talker.get_state()
