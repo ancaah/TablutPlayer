@@ -21,18 +21,20 @@ tp = TablutPlayer(color, timeout, board)
 print("\nInitial state:")
 #tp.display(state)
 print(board)
-
+old_board = copy.deepcopy(board)
 goal = False
 i=0
 while(goal is False):
     state = GameState(to_move=color, 
-                utility=tp.watcher.compute_utility(board), 
+                utility=tp.watcher.compute_utility(board, old_board ), 
                 board=board, 
                 moves=tp.getAllMoves(board, color))
     #move = random_player(tp, state)
-    move = alpha_beta_player(tp, state)
+    #move = alpha_beta_player(tp, state)
+    move = alpha_beta_cutoff_search(state, tp, 7)
     print(move)
     move = talker.send_move(move)
+    old_board = copy.deepcopy(board)
     #get the new state
     board, turn ,king_position = talker.get_state()
     i+=1

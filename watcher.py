@@ -72,23 +72,26 @@ class Watcher():
         # Starting position
         starting_pos = position.copy()
         curr_pos = position.copy()
-        dummy_board = np.copy(board)
+        #dummy_board = np.copy(board)
 
         # Just one between row and col will change, depending on the direction that needs to get checked   
         # Moving first cell to check
-        old_position = curr_pos.copy()
+        #old_position = curr_pos.copy()
         curr_pos = Utils.check_next_cell(curr_pos, _d)
 
         while self.cellIsFree(board,curr_pos, True, starting_pos):
             # We do this to check the freeKingPaths later
-            Utils.changeCell(dummy_board, old_position, Pawn.EMPTY.value)
-            Utils.changeCell(dummy_board, curr_pos, Pawn.BLACK.value)
+            
+            #Utils.changeCell(dummy_board, old_position, Pawn.EMPTY.value)
+            #Utils.changeCell(dummy_board, curr_pos, Pawn.BLACK.value)
+            
             # This is important, if the move we just found gives the White team a winning condition we don't add it
             # If the cell is valid add to the results
-            if self.freeKingPaths(dummy_board) == 0:
-                free_cell = curr_pos.copy()
-                result.append(((starting_pos),(free_cell)))
-            old_position = curr_pos.copy()
+            
+            #if self.freeKingPaths(dummy_board) == 0:
+            free_cell = curr_pos.copy()
+            result.append(((starting_pos),(free_cell)))
+            #old_position = curr_pos.copy()
             # Move to the next cell to check
             curr_pos = Utils.check_next_cell(curr_pos, _d)
 
@@ -153,7 +156,7 @@ class Watcher():
             if board[eat_pos[0], eat_pos[1]] == Pawn.WHITE.value:
                 curr_pos = Utils.check_next_cell(curr_pos, _d)
                 if Utils.cellIsIntoMatrix(curr_pos): 
-                    if curr_pos == Pawn.BLACK.value or curr_pos in self.camp:
+                    if curr_pos == Pawn.BLACK.value or curr_pos in self.camps:
                         # Eat!
                         board[eat_pos[0], eat_pos[1]] = Pawn.EMPTY.value
 
@@ -198,7 +201,7 @@ class Watcher():
     
     # This methods return 1 if WHITE wins, -1 if BLACK wins, otherwise 0
     # Maybe it's possible to identify other values, e.g. 0.3 when eating a pawn
-    def compute_utility(self,board):
+    def compute_utility(self,board, old_board):
     #   Check if BLACK won
         blocks = 0
         
@@ -233,5 +236,32 @@ class Watcher():
                 return -1
             elif (board[i,j+1] == Pawn.BLACK.value or [i,j+1] in self.camps) and (board[i,j-1] == Pawn.BLACK.value or [i,j-1] in self.camps): 
                 return -1
+
+        # To limit the depth search, let's add "soft wins" cases.
+
+        # If there are less WHITE or BLACK pawns (cause eated) it's win/lose
+        count_black_pawn_old = 0
+        count_white_pawn_old = 0
+        count_white_pawn = 0
+        count_black_pawn = 0
+        for i in range(0,9):
+            for j in range (0,9):
+                if board[i,j] == Pawn.BLACK.value:
+                    count_black_pawn+=1
+                elif board[i,j] == Pawn.WHITE.value:
+                    count_white_pawn+=1
+                if old_board[i,j] == Pawn.BLACK.value:
+                    count_black_pawn_old+=1
+                elif old_board[i,j] == Pawn.WHITE.value:
+                    count_white_pawn_old+=1
+
+        if count_black_pawn_old > count_black_pawn:
+            return 0.5
+        if count_white_pawn_old > count_white_pawn:
+            return -0.5
+
+        # If there is at least one king block
+        
+        #if blocks >= 1: return -0.3
 
         return 0

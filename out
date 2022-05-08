@@ -1,0 +1,2015 @@
+
+Connection to: localhost
+
+Initial state:
+[[0 0 0 2 2 2 0 0 0]
+ [0 0 0 0 2 0 0 0 0]
+ [0 0 0 0 1 0 0 0 0]
+ [2 0 0 0 1 0 0 0 2]
+ [2 2 1 1 3 1 1 2 2]
+ [2 0 0 0 1 0 0 0 2]
+ [0 0 0 0 1 0 0 0 0]
+ [0 0 0 0 2 0 0 0 0]
+ [0 0 0 2 2 2 0 0 0]]
+Traceback (most recent call last):
+  File "/home/hiari/ai/myTablutPlayer/main.py", line 33, in <module>
+    move = alpha_beta_player(tp, state)
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 202, in alpha_beta_player
+    return alpha_beta_search(state, game)
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 123, in alpha_beta_search
+    v = min_value(game.result(state, a), best_score, beta)
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 101, in max_value
+    v = max(v, min_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/aima/games.py", line 112, in min_value
+    v = min(v, max_value(game.result(state, a), alpha, beta))
+  File "/home/hiari/ai/myTablutPlayer/player.py", line 64, in result
+    moves = self.getAllMoves(board, player))
+  File "/home/hiari/ai/myTablutPlayer/player.py", line 32, in getAllMoves
+    return self.watcher.whiteBehaviour(board)
+  File "/home/hiari/ai/myTablutPlayer/watcher.py", line 143, in whiteBehaviour
+    self.giveReachableCells_White(result, board, position,"up")
+  File "/home/hiari/ai/myTablutPlayer/watcher.py", line 110, in giveReachableCells_White
+    while self.cellIsFree(board, curr_pos):
+  File "/home/hiari/ai/myTablutPlayer/watcher.py", line 54, in cellIsFree
+    if Utils.cellIsOutOfMatrix(position): return False
+  File "/home/hiari/ai/myTablutPlayer/tools.py", line 166, in cellIsOutOfMatrix
+    if row < 0 or row > 8 or col < 0 or col > 8: 
+RecursionError: maximum recursion depth exceeded in comparison

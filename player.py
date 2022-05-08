@@ -22,7 +22,7 @@ class TablutPlayer(Game):
         self.watcher = Watcher(king_position)
         board = initial_board
         self.initial = GameState(to_move=color, 
-                                utility=self.watcher.compute_utility(board), 
+                                utility=self.watcher.compute_utility(board, board), 
                                 board=board, 
                                 moves=self.getAllMoves(board, color))
         self.timeout = timeout
@@ -46,18 +46,21 @@ class TablutPlayer(Game):
             return self.watcher.whiteBehaviour(board)
         else: return self.watcher.blackBehaviour(board)         
 
-        
-    def result(self, state, action):
+    
+    def result(self, state, move):
         """Return the state that results from making a move from a state."""
         board = copy.deepcopy(state.board)
+        old_board = copy.deepcopy(state.board)
         player = state.to_move
+        #if move not in state.moves:
+        #    return state
 
         # Make the given move on the copied board, change turn 
-        self.watcher.doMove(board,action, player)
+        self.watcher.doMove(board,move, player)
         player = ("BLACK" if player == "WHITE" else "WHITE")
         
         return GameState(to_move=player,
-                        utility= self.watcher.compute_utility(board),
+                        utility= self.watcher.compute_utility(board, old_board),
                         board = board,
                         moves = self.getAllMoves(board, player))
 
