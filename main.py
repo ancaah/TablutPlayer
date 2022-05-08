@@ -9,6 +9,7 @@ from aima.games import *
 name = "ASimplexMind"
 color = sys.argv[1]
 timeout = int(sys.argv[2])
+print("Hi, i'm " + name + ", I will play as " + color + " and I have " + str(timeout))
 # if arg is null localhost is chosen
 if len(sys.argv) == 4: 
     server_address = sys.argv[3]
@@ -31,7 +32,7 @@ while(goal is False):
                 moves=tp.getAllMoves(board, color))
     #move = random_player(tp, state)
     #move = alpha_beta_player(tp, state)
-    move = alpha_beta_cutoff_search(state, tp, 7)
+    move = alpha_beta_cutoff_search(state, tp, 4)
     print(move)
     move = talker.send_move(move)
     old_board = copy.deepcopy(board)
